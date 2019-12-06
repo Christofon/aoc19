@@ -11,16 +11,20 @@ pointer = 0
 
 while pointer < len(optcode):
     if optcode[pointer] == 1:
-        added = optcode[pointer + 1] + optcode[pointer + 2]
+        added = optcode[optcode[pointer + 1]] + optcode[optcode[pointer + 2]]
         optcode[optcode[pointer + 3]] = added
         pointer = pointer + 4
         print(optcode)
+        print(pointer)
     elif optcode[pointer] == 2:
-        multi = optcode[pointer + 1] * optcode[pointer + 2]
+        multi = optcode[optcode[pointer + 1]] * optcode[optcode[pointer + 2]]
         optcode[optcode[pointer + 3]] = multi
         pointer = pointer + 4
         print(optcode)
+        print(pointer)
     elif optcode[pointer] == 99:
         print(optcode)
+        break
     else:
         raise Exception("Something went wrong...")
+        break
